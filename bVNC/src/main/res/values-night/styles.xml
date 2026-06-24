@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryVariant">@color/brand_primary_dark</item>
+        <item name="colorOnPrimary">@color/on_brand</item>
+        <item name="colorSecondary">@color/brand_primary</item>
+        <item name="colorSecondaryVariant">@color/brand_primary_dark</item>
+        <item name="colorOnSecondary">@color/on_brand</item>
+        <item name="android:windowBackground">@color/surface_dark</item>
+        <item name="android:toolbarStyle">@style/ToolbarStyle</item>
+        <item name="toolbarStyle">@style/ToolbarStyle</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    </style>
+
+</resources>

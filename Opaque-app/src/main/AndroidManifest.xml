@@ -27,9 +27,9 @@
     <application
         android:name="com.iiordanov.bVNC.App"
         android:allowBackup="true"
-        android:banner="@mipmap/banner_opaque"
+        android:banner="@drawable/banner_spice_android"
 
-        android:icon="@mipmap/icon_opaque"
+        android:icon="@drawable/ic_spice_android"
         android:label="@string/opaque_app_name"
         android:theme="@style/AppThemeDayNight"
         >
@@ -77,7 +77,7 @@
             android:windowSoftInputMode="stateHidden|adjustResize">
 
             <intent-filter
-                android:icon="@drawable/opaque_icon"
+                android:icon="@drawable/ic_spice_android"
                 android:label="@string/opaque_app_name">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -93,7 +93,7 @@
             </intent-filter>
 
             <intent-filter
-                android:icon="@drawable/opaque_icon"
+                android:icon="@drawable/ic_spice_android"
                 android:label="@string/opaque_app_name">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -105,7 +105,7 @@
             </intent-filter>
 
             <intent-filter
-                android:icon="@drawable/opaque_icon"
+                android:icon="@drawable/ic_spice_android"
                 android:label="@string/opaque_app_name">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />

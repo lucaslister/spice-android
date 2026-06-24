@@ -3,4 +3,16 @@
     <color name="black_overlay">#66000000</color>
     <color name="extra_keys_background">#AA000000</color>
     <color name="primaryTextColor">#AAAAAA</color>
+
+    <!-- Brand: LineageOS-inspired deep teal -->
+    <color name="brand_primary">#167C80</color>
+    <color name="brand_primary_dark">#0D5C62</color>
+    <color name="on_brand">#FFFFFF</color>
+
+    <!-- Surfaces -->
+    <color name="surface_light">#F1F5F9</color>
+    <color name="surface_dark">#1E293B</color>
+    <color name="surface_card_dark">#243447</color>
+    <color name="on_surface_light">#1A2332</color>
+    <color name="on_surface_dark">#E2E8F0</color>
 </resources>

@@ -34,8 +34,8 @@
     <string name="action_delete_connection">Delete Connection</string>
     <string name="action_rate_or_share_app">⭐ Get Help, Rate, Share</string>
     <string name="get_help">Get Help</string>
-    <string name="opaque_app_name" translatable="false">Opaque</string>
-    <string name="opaque_app_name_beta" translatable="false">Opaque Beta</string>
+    <string name="opaque_app_name" translatable="false">Spice-Android</string>
+    <string name="opaque_app_name_beta" translatable="false">Spice-Android Beta</string>
     <string name="advanced_settings">Advanced Settings</string>
     <string name="audio">Audio</string>
     <string name="auto_rotation">Screen rotation while connected</string>
@@ -50,15 +50,21 @@
     <string name="ca_file_not_found">File not found. Please enter a valid file name in the text field (e.g. /sdcard/ca.crt).</string>
     <string name="ca_file_error_reading">Error reading CA file. Please ensure it is readable.</string>
     <string name="ca_new_or_changed">New or changed server certificate</string>
-    <string name="connection_type_text">Virtualization Environment (RHEV/oVirt or Proxmox)</string>
+    <string name="connection_type_text">Proxmox VE server</string>
     <string name="connection_type_ovirt" translatable="false">oVirt/RHEV</string>
     <string name="connection_type_pve" translatable="false">Proxmox VE</string>
     <string name="connection_type_prompt_title">Select server type</string>
     <string-array name="connection_types" translatable="false">
-        <item>@string/connection_type_ovirt</item>
         <item>@string/connection_type_pve</item>
     </string-array>
-    <string name="connection_setup_vm_name">Virtual machine name (optional)</string>
+    <string name="connection_setup_vm_name">VM name (leave blank to pick on connect)</string>
+    <string name="proxmox_add_connection_header">Add Proxmox Connection</string>
+    <string name="proxmox_browse_vms">Browse VMs</string>
+    <string name="proxmox_loading_vms">Connecting to Proxmox…</string>
+    <string name="proxmox_vm_status_running">Running</string>
+    <string name="proxmox_vm_status_stopped">Stopped</string>
+    <string name="proxmox_vm_selected">Selected: %1$s</string>
+    <string name="proxmox_browse_error">Could not connect: %1$s</string>
     <string name="connection_setup_host_name">Server Address</string>
     <string name="connection_setup_user">User@Domain</string>
     <string name="connection_setup_password">Password</string>
@@ -113,14 +119,14 @@
     <string name="usb">USB (plug in OTG cable first)</string>
 
     <string name="ad_donate_text0">The Pro version also has support for multi-factor SSH authentication. In addition, it supports the much requested Master Password feature that prevents unauthorized use and encrypts all connection settings including passwords and SSH keys to guard against theft. Enable it from the main Menu.</string>
-    <string name="ad_donate_spice_text1a">Tap here to buy Opaque and save direct connections to Proxmox and oVirt. It also supports .vv files.</string>
+    <string name="ad_donate_spice_text1a">Spice-Android saves direct connections to Proxmox and oVirt, and also opens .vv files. No purchase required — the app is free and open-source.</string>
     <string name="ad_donate_spice_text1b">Tap here to buy the Pro version and just open .vv files.</string>
     <string name="ad_donate_text1">Tap here to support the project with a small donation by buying the Pro version.</string>
     <string name="ad_donate_text2">The Pro version allows you to disable this dialog and gives you access to additional features.</string>
     <string name="ad_donate_text3">If you would like to support the project further, follow the following links for links to client apps for: </string>
     <string name="ad_donate_text_vnc">The Open Source project needs your support! Donate to us by buying bVNC Pro. See below for links to bVNC Pro and our other apps.</string>
     <string name="ad_donate_text_rdp">The Open Source project needs your support! Donate to us by buying aRDP Pro, which supports sound redirection. See below for links to aRDP Pro and our other apps.</string>
-    <string name="ad_donate_text_spice">For Proxmox and oVirt connections, please donate to the project by buying Opaque or aSPICE Pro. The Free version of aSPICE only supports direct connections to KVM virtual machines. See below for links to Opaque and aSPICE Pro, as well as our other apps.</string>
+    <string name="ad_donate_text_spice">Spice-Android is a free, open-source client for Proxmox and oVirt connections. All features are included — no Pro version or in-app purchase is needed. See below for our other apps.</string>
 
     <string name="address_caption">VNC Server</string>
     <string name="address_caption_hint">VNC Server</string>
@@ -583,7 +589,7 @@ If you are looking for a quick performance boost, try setting the Color mode to 
     <string name="pro_feature_intro">It appears you are using a Pro feature. Please support the project by purchasing the Pro version which has support for this feature. Please check the intro dialog for links to the correct app.</string>
     <string name="pro_feature_generic">It appears you are using a Pro feature. Please support the project by purchasing the Pro version which has support for this feature. A link to the Pro version is available in the start dialog.</string>
     <string name="pro_feature_rdp">It looks like you tried to open an .rdp file which is a Pro feature. Please support the project by purchasing aRDP Pro, which supports .rdp files. A link to aRDP Pro version is available in the start dialog.</string>
-    <string name="pro_feature_spice">It looks like you tried to open a .vv file. If you would like to save connections to Proxmox or oVirt right inside the app and also want to open .vv files, consider purchasing Opaque. If you only need .vv file support, you can get aSPICE Pro. Find links to both apps in the start dialog.</string>
+    <string name="pro_feature_spice">It looks like you tried to open a .vv file. Spice-Android supports both .vv files and saving connections to Proxmox or oVirt right inside the app — no purchase required.</string>
 
     <string name="rdp_address_caption_hint">RDP Server</string>
     <string name="rdp_adv_console_mode">Console Mode</string>
@@ -946,7 +952,7 @@ Once you have a connection saved, you can connect to the remote server by tappin
 Finally, you can use the Search Connections field to quickly find connections by filter shown connections."</string>
     <string name="opaque_connection_screen_help_text" tools:ignore="TypographyOther">"
 When you add or edit a connection, you will see a connection configuration page.
-Here you can set up a new Opaque connection or choose a preexisting one.
+Here you can set up a new Spice-Android connection or choose a preexisting one.
 At the top is a button that allows you to save the connection.
 Below that is where you configure your connection.
 

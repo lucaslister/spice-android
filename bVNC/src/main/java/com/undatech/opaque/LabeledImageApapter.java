@@ -107,6 +107,13 @@ public class LabeledImageApapter extends BaseAdapter {
         } else {
             textView.setText(label);
         }
+
+        TextView hostnameView = (TextView) gridView.findViewById(R.id.grid_item_hostname);
+        if (hostnameView != null) {
+            String hostname = c.getHostname();
+            hostnameView.setText(hostname != null ? hostname : "");
+        }
+
         String screenshotFilePath = context.getFilesDir() + "/" + c.getScreenshotFilename();
         AppCompatImageView imageView = gridView.findViewById(R.id.grid_item_image);
         if (doNotShowDesktopThumbnails) {

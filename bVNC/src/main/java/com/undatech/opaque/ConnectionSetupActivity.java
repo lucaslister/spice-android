@@ -20,8 +20,8 @@
 
 package com.undatech.opaque;
 
-import android.app.Activity;
 import android.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -49,7 +49,7 @@ import com.undatech.remoteClientUi.R;
 import java.util.Arrays;
 import java.util.List;
 
-public class ConnectionSetupActivity extends Activity {
+public class ConnectionSetupActivity extends AppCompatActivity implements VmPickerBottomSheet.OnVmSelectedListener {
     private static final String TAG = "ConnectionSetupActivity";
 
     private EditText hostname = null;
@@ -85,6 +85,19 @@ public class ConnectionSetupActivity extends Activity {
             Intent intent = new Intent(ConnectionSetupActivity.this, AdvancedSettingsActivity.class);
             intent.putExtra(Constants.opaqueConnectionSettingsClassPath, currentConnection);
             startActivityForResult(intent, RemoteClientLibConstants.ADVANCED_SETTINGS_REQUEST_CODE);
+        });
+
+        Button browseVmsButton = findViewById(R.id.browseVmsButton);
+        browseVmsButton.setOnClickListener(v -> {
+            String host = hostname.getText().toString().trim();
+            String u = user.getText().toString().trim();
+            String p = password.getText().toString();
+            if (host.isEmpty() || u.isEmpty()) {
+                Snackbar.make(v, R.string.error_no_user_hostname, Snackbar.LENGTH_SHORT).show();
+                return;
+            }
+            VmPickerBottomSheet picker = VmPickerBottomSheet.newInstance(host, u, p);
+            picker.show(getSupportFragmentManager(), "vmPicker");
         });
 
         loadConnections();
@@ -217,8 +230,7 @@ public class ConnectionSetupActivity extends Activity {
     }
 
     private void updateViewsFromPreferences() {
-        List<String> connectionTypes = Arrays.asList(getResources().getStringArray(R.array.connection_types));
-        spinnerConnectionType.setSelection(connectionTypes.indexOf(currentConnection.getConnectionTypeString()));
+        spinnerConnectionType.setSelection(0); // always Proxmox VE
         hostname.setText(currentConnection.getHostname());
         vmname.setText(currentConnection.getVmname());
         user.setText(currentConnection.getUser());
@@ -378,5 +390,11 @@ public class ConnectionSetupActivity extends Activity {
             Snackbar m = Snackbar.make(user, R.string.error_no_user_hostname, Snackbar.LENGTH_LONG);
             m.show();
         }
+    }
+
+    @Override
+    public void onVmSelected(@NonNull String vmId, @NonNull String vmName) {
+        vmname.setText(vmId);
+        Snackbar.make(vmname, getString(R.string.proxmox_vm_selected, vmName), Snackbar.LENGTH_SHORT).show();
     }
 }

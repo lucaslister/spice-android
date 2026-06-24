@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Monitor frame (rounded rectangle outline) -->
+    <path
+        android:strokeColor="#167C80"
+        android:strokeWidth="4"
+        android:fillColor="#00000000"
+        android:pathData="M20,22 Q20,18 24,18 L84,18 Q88,18 88,22 L88,72 Q88,76 84,76 L20,76 Q16,76 16,72 Z" />
+
+    <!-- Screen area (inner fill, very light teal tint) -->
+    <path
+        android:fillColor="#1A167C80"
+        android:pathData="M24,24 L84,24 L84,72 L24,72 Z" />
+
+    <!-- Three network nodes (circles) -->
+    <circle
+        android:fillColor="#167C80"
+        android:cx="37"
+        android:cy="49"
+        android:r="5" />
+    <circle
+        android:fillColor="#167C80"
+        android:cx="54"
+        android:cy="40"
+        android:r="5" />
+    <circle
+        android:fillColor="#167C80"
+        android:cx="71"
+        android:cy="49"
+        android:r="5" />
+
+    <!-- Connection lines between nodes -->
+    <path
+        android:strokeColor="#167C80"
+        android:strokeWidth="2.5"
+        android:fillColor="#00000000"
+        android:pathData="M37,49 L54,40" />
+    <path
+        android:strokeColor="#167C80"
+        android:strokeWidth="2.5"
+        android:fillColor="#00000000"
+        android:pathData="M54,40 L71,49" />
+    <path
+        android:strokeColor="#167C80"
+        android:strokeWidth="2"
+        android:strokeAlpha="0.5"
+        android:fillColor="#00000000"
+        android:pathData="M37,49 L71,49" />
+
+    <!-- Monitor stand (vertical stem) -->
+    <path
+        android:strokeColor="#167C80"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M54,76 L54,88" />
+
+    <!-- Monitor base -->
+    <path
+        android:strokeColor="#167C80"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M40,88 L68,88" />
+
+</vector>

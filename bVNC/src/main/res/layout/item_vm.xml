@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp">
+
+    <!-- Server/VM icon -->
+    <ImageView
+        android:id="@+id/vm_icon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:contentDescription="@null"
+        app:srcCompat="@drawable/ic_spice_android"
+        app:tint="@color/brand_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- VM name -->
+    <TextView
+        android:id="@+id/vm_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/vm_icon"
+        app:layout_constraintEnd_toStartOf="@id/vm_status"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/vm_detail" />
+
+    <!-- Node · type detail -->
+    <TextView
+        android:id="@+id/vm_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:textSize="12sp"
+        android:textColor="?android:attr/textColorSecondary"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toEndOf="@id/vm_icon"
+        app:layout_constraintEnd_toStartOf="@id/vm_status"
+        app:layout_constraintTop_toBottomOf="@id/vm_name"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Running / Stopped chip -->
+    <com.google.android.material.chip.Chip
+        android:id="@+id/vm_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:clickable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
