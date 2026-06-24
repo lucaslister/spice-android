@@ -20,6 +20,7 @@
 
 package com.undatech.opaque;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;

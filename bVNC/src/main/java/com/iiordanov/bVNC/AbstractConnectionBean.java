@@ -2228,7 +2228,11 @@ public abstract class AbstractConnectionBean extends com.antlersoft.android.dbim
 
     public static Connection getRemoteConnectionSettings(Intent i, Context context, boolean masterPasswordEnabled) throws GettingConnectionSettingsException {
         String configFileName = retrieveConfigFileFromIntent(i, context.getFilesDir().toString(), context, context);
-        if (Utils.isOpaque(context)) {
+        // A serialized ConnectionSettings extra (e.g. launched from the Compose Proxmox UI)
+        // takes precedence regardless of build flavor, so the Proxmox/SPICE session is set up
+        // deterministically rather than depending on the package-name based flavor detection.
+        if (Utils.isOpaque(context)
+                || i.getSerializableExtra(Constants.opaqueConnectionSettingsClassPath) != null) {
             return getOpaqueConnection(i, context, configFileName);
         }
         if (configFileName != null && Utils.isFree(context)) {

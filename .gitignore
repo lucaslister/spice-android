@@ -68,6 +68,7 @@ out/
 .gradle
 .gradle/
 build/
+.kotlin/
 
 # Signing files
 .signing/

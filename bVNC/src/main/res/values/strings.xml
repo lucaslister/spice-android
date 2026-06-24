@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Compose Proxmox-first UI -->
+    <string name="app_title_servers">Proxmox Servers</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_add_server">Add server</string>
+    <string name="action_more">More</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_back">Back</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_connect">Connect</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_toggle_password">Toggle password visibility</string>
+    <string name="action_test_connection">Test connection</string>
+    <string name="action_save_server">Save server</string>
+
+    <string name="delete_server_title">Delete server?</string>
+    <string name="delete_server_message">Remove \"%1$s\" and its saved credentials from this device?</string>
+
+    <string name="section_recent">Recent</string>
+    <string name="section_servers">Servers</string>
+    <string name="form_section_connection">Connection</string>
+    <string name="form_section_auth">Authentication</string>
+    <string name="form_section_security">Security</string>
+
+    <string name="empty_servers_title">No servers yet</string>
+    <string name="empty_servers_subtitle">Add your Proxmox server to browse its VMs and connect over SPICE.</string>
+
+    <string name="add_server_title">Add server</string>
+    <string name="edit_server_title">Edit server</string>
+    <string name="field_label">Name</string>
+    <string name="field_label_hint">e.g. Home Proxmox</string>
+    <string name="field_host">Host / IP</string>
+    <string name="field_host_hint">192.168.1.10 or pve.example.com</string>
+    <string name="field_port">Port</string>
+    <string name="field_user">Username</string>
+    <string name="field_user_hint">root</string>
+    <string name="field_realm">Realm</string>
+    <string name="field_password">Password</string>
+    <string name="field_save_password">Save password</string>
+    <string name="field_save_password_hint">Store encrypted on this device. If off, you\'ll be asked each time.</string>
+    <string name="field_ssl_strict">Strict TLS verification</string>
+    <string name="field_ssl_strict_hint">Off allows self-signed Proxmox certificates.</string>
+
+    <string name="vms_title">Virtual Machines</string>
+    <string name="vms_error_title">Couldn\'t load VMs</string>
+    <string name="vms_empty">No VMs or containers found for this account.</string>
+    <string name="vm_running">Running</string>
+    <string name="vm_stopped">Stopped</string>
+    <string name="prompt_password">Enter password</string>
+    <string name="prompt_otp">Enter 2FA code</string>
+
+    <string name="settings_appearance">Appearance</string>
+    <string name="theme_system">Follow system</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="settings_dynamic_color">Dynamic color</string>
+    <string name="settings_dynamic_color_hint">Use colors from your wallpaper (Android 12+).</string>
+    <string name="settings_about">About</string>
+    <string name="settings_about_body">A modern SPICE client for Proxmox VE. Save your server once, browse its VMs, and connect with a tap.</string>
+
     <string name="audio_will_be_initialized">Audio will be initialized in about 15 seconds, please stop any running video or audio playback before then</string>
     <string name="audio_initialized">Audio initialized</string>
     <string name="action_import_settings">Import Settings</string>
@@ -34,8 +96,8 @@
     <string name="action_delete_connection">Delete Connection</string>
     <string name="action_rate_or_share_app">⭐ Get Help, Rate, Share</string>
     <string name="get_help">Get Help</string>
-    <string name="opaque_app_name" translatable="false">Spice-Android</string>
-    <string name="opaque_app_name_beta" translatable="false">Spice-Android Beta</string>
+    <string name="spice_android_app_name" translatable="false">Spice-Android</string>
+    <string name="spice_android_app_name_beta" translatable="false">Spice-Android Beta</string>
     <string name="advanced_settings">Advanced Settings</string>
     <string name="audio">Audio</string>
     <string name="auto_rotation">Screen rotation while connected</string>

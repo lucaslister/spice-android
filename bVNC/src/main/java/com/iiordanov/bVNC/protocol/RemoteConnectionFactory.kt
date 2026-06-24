@@ -33,25 +33,17 @@ class RemoteConnectionFactory(
         connection?.connectionTypeString == context.resources.getString(R.string.connection_type_pve)
 
     fun build(): RemoteConnection {
-        val remoteConnection: RemoteConnection
-        if (isSpice) {
-            remoteConnection =
-                RemoteSpiceConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
-        } else if (isRdp) {
-            remoteConnection = RemoteRdpConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
-        } else if (isVnc) {
-            remoteConnection = RemoteVncConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
-        } else if (isOpaque) {
-            remoteConnection = if (isOvirt) {
-                RemoteOvirtConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
-            } else if (isProxmox) {
-                RemoteProxmoxConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
-            } else {
-                RemoteSpiceConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
-            }
-        } else {
-            throw IllegalStateException("App type must be one of VNC, RDP, SPICE or Opaque")
+        // A Proxmox/oVirt connection type wins regardless of build flavor: it is only ever set
+        // on a ConnectionSettings produced by the hypervisor UI, so this lets the SPICE-flavored
+        // app drive the Proxmox flow (browse VMs -> fetch .vv -> SPICE) deterministically.
+        return when {
+            isProxmox -> RemoteProxmoxConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
+            isOvirt -> RemoteOvirtConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
+            isSpice -> RemoteSpiceConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
+            isRdp -> RemoteRdpConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
+            isVnc -> RemoteVncConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
+            isOpaque -> RemoteSpiceConnection(context, connection, viewable, hideKeyboardAndExtraKeys)
+            else -> throw IllegalStateException("App type must be one of VNC, RDP, SPICE or Opaque")
         }
-        return remoteConnection
     }
 }

@@ -18,21 +18,15 @@
         android:pathData="M24,24 L84,24 L84,72 L24,72 Z" />
 
     <!-- Three network nodes (circles) -->
-    <circle
+    <path
         android:fillColor="#167C80"
-        android:cx="37"
-        android:cy="49"
-        android:r="5" />
-    <circle
+        android:pathData="M32,49 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+    <path
         android:fillColor="#167C80"
-        android:cx="54"
-        android:cy="40"
-        android:r="5" />
-    <circle
+        android:pathData="M49,40 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+    <path
         android:fillColor="#167C80"
-        android:cx="71"
-        android:cy="49"
-        android:r="5" />
+        android:pathData="M66,49 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
 
     <!-- Connection lines between nodes -->
     <path

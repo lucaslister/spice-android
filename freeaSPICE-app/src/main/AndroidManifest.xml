@@ -81,7 +81,7 @@
 
             <intent-filter
                 android:icon="@mipmap/icon_aspice"
-                android:label="@string/opaque_app_name">
+                android:label="@string/spice_android_app_name">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -97,7 +97,7 @@
 
             <intent-filter
                 android:icon="@mipmap/icon_aspice"
-                android:label="@string/opaque_app_name">
+                android:label="@string/spice_android_app_name">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -111,7 +111,7 @@
 
             <intent-filter
                 android:icon="@mipmap/icon_aspice"
-                android:label="@string/opaque_app_name">
+                android:label="@string/spice_android_app_name">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.BROWSABLE" />

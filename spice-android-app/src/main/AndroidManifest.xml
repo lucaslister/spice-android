@@ -30,7 +30,7 @@
         android:banner="@drawable/banner_spice_android"
 
         android:icon="@drawable/ic_spice_android"
-        android:label="@string/opaque_app_name"
+        android:label="@string/spice_android_app_name"
         android:theme="@style/AppThemeDayNight"
         >
         <uses-library
@@ -38,10 +38,10 @@
             android:required="false" />
 
         <activity
-            android:name="com.undatech.opaque.ConnectionGridActivity"
-            android:configChanges="keyboardHidden"
+            android:name="com.undatech.opaque.ui.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|uiMode"
             android:exported="true"
-            android:label="@string/opaque_app_name"
+            android:label="@string/spice_android_app_name"
             android:resizeableActivity="true"
             android:theme="@style/AppThemeDayNight"
             >
@@ -52,10 +52,19 @@
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.undatech.opaque.ConnectionGridActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/spice_android_app_name"
+            android:resizeableActivity="true"
+            android:theme="@style/AppThemeDayNight"
+            />
         <activity
             android:name="com.undatech.opaque.ConnectionSetupActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:label="@string/opaque_app_name"
+            android:label="@string/spice_android_app_name"
             android:resizeableActivity="true"
             android:screenOrientation="fullUser"
             android:theme="@style/AppThemeDayNight"
@@ -78,7 +87,7 @@
 
             <intent-filter
                 android:icon="@drawable/ic_spice_android"
-                android:label="@string/opaque_app_name">
+                android:label="@string/spice_android_app_name">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -94,7 +103,7 @@
 
             <intent-filter
                 android:icon="@drawable/ic_spice_android"
-                android:label="@string/opaque_app_name">
+                android:label="@string/spice_android_app_name">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -106,7 +115,7 @@
 
             <intent-filter
                 android:icon="@drawable/ic_spice_android"
-                android:label="@string/opaque_app_name">
+                android:label="@string/spice_android_app_name">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />

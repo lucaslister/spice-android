@@ -48,7 +48,7 @@ class VmPickerBottomSheet : BottomSheetDialogFragment() {
 
         executor.execute {
             try {
-                val conn = ConnectionSettings()
+                val conn = ConnectionSettings(java.util.UUID.randomUUID().toString())
                 conn.hostname = hostname
                 conn.setUser(username)
                 conn.setPassword(password)
@@ -140,6 +140,7 @@ class VmPickerBottomSheet : BottomSheetDialogFragment() {
         private const val ARG_USERNAME = "username"
         private const val ARG_PASSWORD = "password"
 
+        @JvmStatic
         fun newInstance(hostname: String, username: String, password: String): VmPickerBottomSheet =
             VmPickerBottomSheet().apply {
                 arguments = Bundle().apply {

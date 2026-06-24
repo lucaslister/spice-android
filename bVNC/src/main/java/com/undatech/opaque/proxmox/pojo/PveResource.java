@@ -9,6 +9,7 @@ public class PveResource {
     private String id;
     private String vmid;
     private String name;
+    private String status;
     public PveResource(JSONObject data) throws JSONException {
         if (!data.isNull("node"))
             node = data.getString("node");
@@ -20,6 +21,16 @@ public class PveResource {
             vmid = data.getString("vmid");
         if (!data.isNull("name"))
             name = data.getString("name");
+        if (!data.isNull("status"))
+            status = data.getString("status");
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getNode() {

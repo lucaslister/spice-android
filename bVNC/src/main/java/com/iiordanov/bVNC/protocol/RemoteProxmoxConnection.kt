@@ -125,8 +125,12 @@ class RemoteProxmoxConnection(
                         user = user.substring(0, indexOfAt)
                     }
 
-                    // Connect to the API and obtain available realms
-                    val cas = standardCertificateAuthorities().readText().replace("\n", "\\n")
+                    // Connect to the API and obtain available realms. The standard CA bundle is
+                    // extracted by GStreamer.init(); if it is missing (e.g. first run / init
+                    // skipped) fall back to empty rather than crashing — the Proxmox node's own CA
+                    // is bundled into the .vv and is what verifies a self-signed server.
+                    val caFile = standardCertificateAuthorities()
+                    val cas = if (caFile.exists()) caFile.readText().replace("\n", "\\n") else ""
                     val api = ProxmoxClient(connection, handler, cas)
                     val realms = api.availableRealms
 
